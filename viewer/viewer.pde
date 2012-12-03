@@ -170,12 +170,12 @@ void draw() {
   
   // -------------------------- display and edit control points of the spines and box ----------------------------------   
     if(pressed) {
-     if (keyPressed&&(key=='a'||key=='s')) {
+     if (keyPressed&&(key=='s')) {
        fill(white,0); noStroke(); if(showControl) C.showSamples(20);
        if(smode==0) C.pick(Pick());
        if(smode==1) C1.pick(Pick());
-       if(smode==2) C2.pick(Pick());
-       if(smode==3) C3.pick(Pick());
+       if(smode==2) C2.pick(Pick()); 
+       if(smode==3) C3.pick(Pick()); 
       }
      }
      
@@ -319,7 +319,7 @@ void draw() {
 if(mode == 1){
 
    if(pressed) {
-     if (keyPressed&&(key=='a'||key=='s')) {
+     if (keyPressed&&(key=='s')) {
        fill(white,0); noStroke(); if(showControl) C.showSamples(20);
        if(smode==0) C.pick(Pick());
        if(smode==1) C1.pick(Pick());
@@ -447,7 +447,7 @@ void mousePressed() {
 }
   
 void mouseDragged() {
-  if(keyPressed&&key=='a') {C.dragPoint( V(.5*(mouseX-pmouseX),I,.5*(mouseY-pmouseY),K) ); } // move selected vertex of curve C in screen plane
+  //if(keyPressed&&key=='a') {C.dragPoint( V(.5*(mouseX-pmouseX),I,.5*(mouseY-pmouseY),K) ); } // move selected vertex of curve C in screen plane
   if(keyPressed&&key=='s') {
  
     if(smode==0) C.dragPoint( V(.5*(mouseX-pmouseX),I,-.5*(mouseY-pmouseY),J) ); 
